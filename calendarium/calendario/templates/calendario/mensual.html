@@ -1,0 +1,39 @@
+{# esto es un comentario #}
+{% extends "calendario/base.html" %}
+{% load static %}
+
+{% block cabecera %}
+    <link rel="stylesheet" type="text/css" href="{% static 'calendario/css/mensual.css' %}">
+    <title>Vista mensual</title>
+{% endblock %}
+
+
+{% block contenido %}
+  <!--Sigo trabajando en ello-->
+  <div class="row">
+    <h1 id="month-year"></h1>
+    <div class="col-lg-2 d-flex justify-content-center align-items-center">
+      <button id="prev-month-btn" onclick="prevMonth()"><i class="material-icons">keyboard_arrow_left</i></button>
+    </div>
+    <div class="col-lg-8 mt-1">
+      <table>
+        <thead>
+          <tr>
+            <th>Lun</th>
+            <th>Mar</th>
+            <th>Mié</th>
+            <th>Jue</th>
+            <th>Vie</th>
+            <th>Sáb</th>
+            <th>Dom</th>
+          </tr>
+        </thead>
+        <tbody id="calendar-body"></tbody>
+      </table>
+    </div>
+    <div class="col-lg-2 d-flex justify-content-center align-items-center">
+      <button id="next-month-btn" onclick="nextMonth()"><i class="material-icons">keyboard_arrow_right</i></button>
+    </div>
+    <script src="{% static 'calendario/js/mensual.js' %}"></script>
+  </div>
+{% endblock %}

@@ -1,0 +1,77 @@
+:root {
+    --colorLetra: #EEEBE4;
+    --colorHeader: #87B297;
+    --colorMenu: #A3C3AC;
+    --colorMes: #B592A0;
+    --colorEventos: #A30B37;
+    --colorTareas: #E87EA1;
+    --WireOne: 'Wire One', sans-serif;
+    --roboto: 'Roboto', sans-serif;
+    --ConcertOne: 'Concert One', sans-serif;
+}
+
+/** MAIN **/
+body{
+    background-color:#F4F4F4;
+}
+#month-year {
+    color: var(--colorMes);
+    font-family: var(--ConcertOne);
+    font-size: 60px;
+    text-align: center;
+    padding-top: 1%;
+}
+
+table {
+    border-collapse: collapse;
+    margin: 20px auto;
+}
+
+th,
+td {
+    border: 1px solid black;
+    width: 170px;
+    height: 40px;
+    text-align: center;
+}
+
+td {
+    height: 100px;
+}
+
+th {
+    background-color: var(--colorHeader);
+}
+
+.diaActual {
+    background-color: var(--colorMenu);
+}
+
+@media (max-width:992px) and (min-width:767px) {
+
+    th,
+    td {
+        width: 100px;
+    }
+
+}
+
+@media (max-width:768px) and (min-width:480px) {
+    th,
+    td {
+        width: 85px;
+    }
+}
+
+@media (max-width:480px) {
+    th,
+    td {
+        width: 50px;
+    }
+    td{
+        height: 50px;
+    }
+    #month-year {
+        font-size: 45px;
+    }
+}
