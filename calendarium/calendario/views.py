@@ -4,15 +4,12 @@ from django.http import HttpResponse
 from django.urls import reverse
 from django.http import HttpResponseRedirect
 
-
-
-
 # Create your views here.
 def error404(request):
     return render(request,'calendario/error404.html')
 
 def inicio(request):
-    home = loader.get_template('calendario/base.html')
+    home = loader.get_template('calendario/index.html')
     if not request.user.is_authenticated:
         return HttpResponseRedirect(reverse('error404'))
     # Resto de la lógica de la vista protegida

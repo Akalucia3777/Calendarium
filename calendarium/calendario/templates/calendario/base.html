@@ -11,13 +11,15 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Wire+One&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="{% static 'calendario/css/index.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Concert+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     {% block cabecera %}
-        <title>Calendarium</title>
+
     {% endblock %}
     
 </head>
 <body>
+    <!--Barra de navegacion-->
     <nav class="navbar navbar-expand-sm fixed-top">
         <div class="container-fluid d-flex justify-content-start">
             <a class="navbar-brand" href="{% url 'inicio' %}">
@@ -30,7 +32,8 @@
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse justify-content-center justify-content-lg-end text-center" id="navbarNav">
+            <div class="collapse navbar-collapse justify-content-center justify-content-lg-end text-center"
+                id="navbarNav">
                 <ul class="navbar-nav nav-tabs">
                     <li class="nav-item">
                         <a class="nav-link active" href="{% url 'inicio' %}">Inicio</a>
@@ -43,7 +46,13 @@
                     </li>
                 </ul>
                 <div class="text-center text-lg-end ms-lg-auto">
-                    <a href = "{% url 'logout' %}"><button class="logout w-100">Logout</button></a>
+                    <button type="submit" class="logout w-100" id="logoutButton">Log out</button>
+                    <a href="{% url 'error404' %}" class="help-button">
+                        <i class="material-icons pt-1">help_outline</i>
+                    </a>
+                    <a href="#" class="mode-link" onclick="toggleDarkMode()">
+                        <i class="material-icons">brightness_medium</i>
+                    </a>
                 </div>
             </div>
         </div>
@@ -52,10 +61,8 @@
         {% block contenido %}
             
         {% endblock %}
-    </div>
-
     <!--JavaScript-->
-    <script src="{% static 'calendario/js/jquery-3.6.1.js' %}"></script>
     <script src="{% static 'calendario/js/index.js' %}"></script>
+    <script src="{% static 'calendario/js/tema.js' %}"></script>
 </body>
 </html>

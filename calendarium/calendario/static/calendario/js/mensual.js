@@ -27,41 +27,63 @@ function updateCalendar() {
     // Limpiar el cuerpo del calendario
     calendarBody.innerHTML = "";
 
-    // Agregar los días al calendario
+    
+    /**Funcion para calcular las semanas segun el mes y el año */
+    function getWeeksInMonth(year, month) {
+        // Obtener el primer día del mes
+        const firstDay = new Date(year, month, 1);     
+        // Obtener el último día del mes
+        const lastDay = new Date(year, month + 1, 0);
+        // Obtener el número de días en el mes
+        const daysInMonth = lastDay.getDate();
+        // Calcular el número de semanas completas
+        const numWeeks = Math.ceil((daysInMonth + firstDay.getDay()) / 7);
+        return numWeeks;
+    }
+
     let contDias = 1;
-    for (let i = 0; i < 6; i++) {
+    let numsemanas = getWeeksInMonth(currentYear,currentMonth);
+    console.log(numsemanas);
+
+    // Agregar los días al calendario
+    for (let i = 0; i < numsemanas; i++) {
         // Crear una fila en la tabla
         let row = document.createElement("tr");
         // Agregar celdas a la fila
         for (let j = 0; j < 7; j++) {
-            if (i === 0 && j < firstDay-1 ) {
-                // Agregar celdas vacías para los días antes del primer día del mes
-                let cell = document.createElement("td");
-                let cellText = document.createTextNode("");
-                cell.appendChild(cellText);
-                row.appendChild(cell);
-            } else if (contDias > daysInMonth) {
-                // Agregar celdas vacías para los días después del último día del mes
-                let cell = document.createElement("td");
-                let cellText = document.createTextNode("");
-                cell.appendChild(cellText);
-                row.appendChild(cell);
-            } else {
-                // Agregar celdas para los días del mes actual
-                let cell = document.createElement("td");
-                let cellText = document.createTextNode(contDias);
-                if (contDias === dateToday.getDate() && currentMonth === dateToday.getMonth() && currentYear === dateToday.getFullYear()) {
-                    // Resaltar el día actual
-                    cell.classList.add("diaActual");
-                }
-                cell.appendChild(cellText);
-                row.appendChild(cell);
-                contDias++;
+          if (i === 0 && j < firstDay - 1) {
+            // Agregar celdas vacías para los días antes del primer día del mes
+            let cell = document.createElement("td");
+            let cellText = document.createTextNode("");
+            cell.appendChild(cellText);
+            row.appendChild(cell);
+          } else if (contDias > daysInMonth) {
+            // Agregar celdas vacías para los días después del último día del mes
+            let cell = document.createElement("td");
+            let cellText = document.createTextNode("");
+            cell.appendChild(cellText);
+            row.appendChild(cell);
+          } else {
+            // Agregar celdas para los días del mes actual
+            let cell = document.createElement("td");
+            cell.classList.add("dia" + contDias+currentMonth+currentYear);
+            let span = document.createElement("span");
+            span.classList.add("dia"); // Agregar las clases "dia" y "dia+contDias" al span
+            
+            let cellText = document.createTextNode(contDias);
+            span.appendChild(cellText);
+            cell.appendChild(span);
+            if (contDias === dateToday.getDate() && currentMonth === dateToday.getMonth() && currentYear === dateToday.getFullYear()) {
+              // Resaltar el día actual
+              cell.classList.add("diaActual");
             }
+            row.appendChild(cell);
+            contDias++;
+          }
         }
         // Agregar la fila al cuerpo del calendario
         calendarBody.appendChild(row);
-    }
+      }
 }
 
 // Función para obtener el número de días en un mes dado
@@ -95,4 +117,5 @@ function prevMonth() {
     updateCalendar();
 }
 
-updateCalendar()
+
+updateCalendar();

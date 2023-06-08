@@ -5,137 +5,175 @@
 {% block cabecera %}
     <link rel="stylesheet" href="{% static 'calendario/css/trackers.css' %}">
     <title>Trackers</title>
+    <script src="{% static 'calendario/js/tema.js' %}"></script>
 {% endblock %}
 
 
 {% block contenido %}
-    <div class="row m-5">
-        <div class="col-sm-6 col-md-6 col-lg-3 mt-5">
-            <div class="card">
-                <div class="card-header p-2 d-flex justify-content-center align-items-center">
-                    <h3>To do</h3>
-                </div>
-                <div class="card-body overflow-auto">
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item d-flex align-items-center">
-                            <span>Entregar pagina web</span>
-                            <div class="form-check form-switch ms-auto">
-                                <input class="form-check-input" type="checkbox" id="toggleSwitch">
-                            </div>
-                        </li>
-                    </ul>
+    <div class="container contenedor">
+        <div class="row m-5">
+            <div class="col-sm-6 col-md-6 col-lg-3 mt-5">
+                <div class="card">
+                    <div class="card-header p-2 d-flex justify-content-center align-items-center">
+                        <h3>To do</h3>
+                    </div>
+                    <div class="card-body overflow-auto">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item d-flex align-items-center flex-fill">
+                                <span>Entregar pagina web</span>
+                                <div class="form-check form-switch ms-auto">
+                                    <input class="form-check-input toggle-switch" type="checkbox" id="toggleSwitch">
+                                    <label class="form-check-label" for="toggleSwitch"></label>
+                                </div>
+                                <a href="#">
+                                    <i class="material-icons" id="basura">delete_forever</i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
-        </div>
 
-        <div class="col-sm-6  col-md-6 col-lg-3 mt-5">
-            <div class="card">
-                <div class="card-header p-2 d-flex justify-content-center align-items-center">
-                    <h3>Series</h3>
+            <div class="col-sm-6  col-md-6 col-lg-3 mt-5">
+                <div class="card">
+                    <div class="card-header p-2 d-flex justify-content-center align-items-center">
+                        <h3>Series</h3>
+                    </div>
+                    <div class="card-body overflow-auto">
+                        <ul class="list-group list-group-flush ">
+                            <li class="list-group-item d-flex align-items-center">
+                                <span>The office</span>
+                                <div class="form-check form-switch ms-auto">
+                                    <input class="form-check-input" type="checkbox" id="toggleSwitch" checked>
+                                </div>
+                                <a href="#">
+                                    <i class="material-icons" id="basura">delete_forever</i>
+                                </a>
+                            </li>
+                            <li class="list-group-item d-flex align-items-center">
+                                <span>Brooklyn-99</span>
+                                <div class="form-check form-switch ms-auto">
+                                    <input class="form-check-input" type="checkbox" id="toggleSwitch" checked>
+                                </div>
+                                <a href="#">
+                                    <i class="material-icons" id="basura">delete_forever</i>
+                                </a>
+                            </li>
+                            <li class="list-group-item d-flex align-items-center">
+                                <span>Outlander</span>
+                                <div class="form-check form-switch ms-auto">
+                                    <input class="form-check-input" type="checkbox" id="toggleSwitch">
+                                </div>
+                                <a href="#">
+                                    <i class="material-icons" id="basura">delete_forever</i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="card-body overflow-auto">
-                    <ul class="list-group list-group-flush ">
-                        <li class="list-group-item d-flex align-items-center">
-                            <span>The office</span>
-                            <div class="form-check form-switch ms-auto">
-                                <input class="form-check-input" type="checkbox" id="toggleSwitch" checked>
-                            </div>
-                        </li>
-                        <li class="list-group-item d-flex align-items-center">
-                            <span>Brooklyn-99</span>
-                            <div class="form-check form-switch ms-auto">
-                                <input class="form-check-input" type="checkbox" id="toggleSwitch" checked>
-                            </div>
-                        </li>
-                        <li class="list-group-item d-flex align-items-center">
-                            <span>Outlander</span>
-                            <div class="form-check form-switch ms-auto">
-                                <input class="form-check-input" type="checkbox" id="toggleSwitch">
-                            </div>
-                        </li>
-                    </ul>
+            </div>
+            <div class="col-sm-6  col-md-6 col-lg-3 mt-5">
+                <div class="card">
+                    <div class="card-header p-2 d-flex justify-content-center align-items-center">
+                        <h3>Peliculas</h3>
+                    </div>
+                    <div class="card-body overflow-auto">
+                        <ul class="list-group list-group-flush ">
+                            <li class="list-group-item d-flex align-items-center">
+                                <span>Ocean's eleven</span>
+                                <div class="form-check form-switch ms-auto">
+                                    <input class="form-check-input" type="checkbox" id="toggleSwitch">
+                                </div>
+                                <a href="#">
+                                    <i class="material-icons" id="basura">delete_forever</i>
+                                </a>
+                            </li>
+                            <li class="list-group-item d-flex align-items-center">
+                                <span>El castillo ambulante</span>
+                                <div class="form-check form-switch ms-auto">
+                                    <input class="form-check-input" type="checkbox" id="toggleSwitch" checked>
+                                </div>
+                                <a href="#">
+                                    <i class="material-icons" id="basura">delete_forever</i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-3  col-md-6 col-lg-3 mt-5">
+                <div class="card">
+                    <div class="card-header p-2 d-flex justify-content-center align-items-center">
+                        <h3>Libros</h3>
+                    </div>
+                    <div class="card-body overflow-auto ">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item d-flex align-items-center">
+                                <span>El principe de la niebla</span>
+                                <div class="form-check form-switch ms-auto">
+                                    <input class="form-check-input" type="checkbox" id="toggleSwitch" checked>
+                                </div>
+                                <a href="#">
+                                    <i class="material-icons" id="basura">delete_forever</i>
+                                </a>
+                            </li>
+                            <li class="list-group-item d-flex align-items-center">
+                                <span>La balada de nunca jamas</span>
+                                <div class="form-check form-switch ms-auto">
+                                    <input class="form-check-input" type="checkbox" id="toggleSwitch" checked>
+                                </div>
+                                <a href="#">
+                                    <i class="material-icons" id="basura">delete_forever</i>
+                                </a>
+                            </li>
+                            <li class="list-group-item d-flex align-items-center">
+                                <span>El dia que dejo de nevar en Alaska</span>
+                                <div class="form-check form-switch ms-auto">
+                                    <input class="form-check-input" type="checkbox" id="toggleSwitch">
+                                </div>
+                                <a href="#">
+                                    <i class="material-icons" id="basura">delete_forever</i>
+                                </a>
+                            </li>
+                            <li class="list-group-item d-flex align-items-center">
+                                <span>La quimica del amor</span>
+                                <div class="form-check form-switch ms-auto">
+                                    <input class="form-check-input" type="checkbox" id="toggleSwitch" checked>
+                                </div>
+                                <a href="#">
+                                    <i class="material-icons" id="basura">delete_forever</i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="col-sm-6  col-md-6 col-lg-3 mt-5">
-            <div class="card">
-                <div class="card-header p-2 d-flex justify-content-center align-items-center">
-                    <h3>Peliculas</h3>
-                </div>
-                <div class="card-body overflow-auto">
-                    <ul class="list-group list-group-flush ">
-                        <li class="list-group-item d-flex align-items-center">
-                            <span>Ocean's eleven</span>
-                            <div class="form-check form-switch ms-auto">
-                                <input class="form-check-input" type="checkbox" id="toggleSwitch">
-                            </div>
-                        </li>
-                        <li class="list-group-item d-flex align-items-center">
-                            <span>El castillo ambulante</span>
-                            <div class="form-check form-switch ms-auto">
-                                <input class="form-check-input" type="checkbox" id="toggleSwitch" checked>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
+        <div class="row m-5">
+            <div class="col-sm-4">
             </div>
-        </div>     
-        <div class="col-sm-3  col-md-6 col-lg-3 mt-5">
-            <div class="card">
-                <div class="card-header p-2 d-flex justify-content-center align-items-center">
-                    <h3>Libros</h3>
-                </div>
-                <div class="card-body overflow-auto ">
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item d-flex align-items-center">
-                            <span>El principe de la niebla</span>
-                            <div class="form-check form-switch ms-auto">
-                                <input class="form-check-input" type="checkbox" id="toggleSwitch" checked>
-                            </div>
-                        </li>
-                        <li class="list-group-item d-flex align-items-center">
-                            <span>La balada de nunca jamas</span>
-                            <div class="form-check form-switch ms-auto">
-                                <input class="form-check-input" type="checkbox" id="toggleSwitch" checked>
-                            </div>
-                        </li>
-                        <li class="list-group-item d-flex align-items-center">
-                            <span>El dia que dejo de nevar en Alaska</span>
-                            <div class="form-check form-switch ms-auto">
-                                <input class="form-check-input" type="checkbox" id="toggleSwitch">
-                            </div>
-                        </li>
-                        <li class="list-group-item d-flex align-items-center">
-                            <span>La quimica del amor</span>
-                            <div class="form-check form-switch ms-auto">
-                                <input class="form-check-input" type="checkbox" id="toggleSwitch" checked>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
+            <div class="col-sm-4">
+                <form action="">
+                    <h1 class="d-flex justify-content-center align-items-center">Añadir al tracker</h1>
+                    <div class="mb-3 mt-3">
+                        <input type="text" class="form-control mt-3" id="nombre" placeholder="Nombre" name="nombre">
+                        <select class="form-select mt-3" id="sel1" name="sellist1">
+                            <option selected disabled>Seleccione tracker</option>
+                            <option>To-do</option>
+                            <option>Series</option>
+                            <option>peliculas</option>
+                            <option>Libros</option>
+                        </select>
+                    </div>
+                    <div class="d-flex justify-content-center align-items-center">
+                        <button class="btn">Enviar</button>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
-    <div class="row m-5">
-        <div class="col-sm-4">
-        </div>
-        <div class="col-sm-4">
-            <form action="">
-                <h1 class="d-flex justify-content-center align-items-center">Añadir al tracker</h1>
-                <div class="mb-3 mt-3">
-                    <input type="text" class="form-control mt-3" id="nombre" placeholder="Nombre" name="nombre">
-                    <select class="form-select mt-3" id="sel1" name="sellist1">
-                        <option selected disabled>Seleccione tracker</option>
-                        <option>To-do</option>
-                        <option>Series</option>
-                        <option>peliculas</option>
-                        <option>Libros</option>
-                    </select>
-                </div>
-                <div class="d-flex justify-content-center align-items-center">
-                    <button class="btn btn-success">Enviar</button>
-                </div>
-            </form>
-        </div>
-    </div>
+
+    <!--JavaScript-->
+    <script src="{% static 'calendario/js/trackers.js' %}"></script>
+    <script src="{% static 'calendario/js/tema.js' %}"></script>
 {% endblock %}

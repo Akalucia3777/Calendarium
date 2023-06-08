@@ -44,7 +44,6 @@ body{
     font-size: 60px;
     font-weight: 100;
     color: #EEEBE4;
-  
 }
 .navbar-nav {
     margin-left: auto;
@@ -69,21 +68,20 @@ body{
     background-color: var(--colorHeader);
 }
 
-
 .help-button{
-    color: var(--colorLetra) !important;
+    color: var(--colorLetra);
 }
 
 .help-button:hover{
-    color: var(--colorMes) !important;
+    color: var(--colorMes);
 }
 
 .mode-link{
-    color: var(--colorLetra) !important;
+    color: var(--colorLetra);
 }
 
 .mode-link:hover{
-    color: var(--colorMes) !important;
+    color: var(--colorMes);
 }
 
 @media (min-width:768px) {
@@ -93,48 +91,27 @@ body{
     li{
         width: 100%;
     }
+
 }
 
 /**Body de la pagina*/
-.card{
-    height: 400px;
-}
-
-body{
-    background-color:#F4F4F4;
-}
-
-#basura{
-    color: var(--colorHeader);
-}
-
-.form-check-input[type="checkbox"]:checked {
-    background-color: var(--colorTareas) !important;
-    border-color: var(--colorTareas) !important;
-}
-  
-/* Estilo para el indicador del toggle switch */
-.form-check-input[type="checkbox"]:checked+.form-check-label::before {
-    background-color: var(--colorTareas) !important;
-}
-
-.card-header{
-    background-color: var(--colorMenu) !important;
+h1{
+    color: var(--colorMes);
+    font-family: var(--ConcertOne);
+    font-size: 60px;
+    text-align: center;
 }
 
 h3{
+    font-family: var(--ConcertOne);
+    font-size: 60px;
+    text-align: center;
+}
+
+p{
     font-family: var(--roboto);
 }
 
-h1{
-    font-family: var(--ConcertOne);
-    color: var(--colorMes);
-}
-
-.btn{
-    background-color: var(--colorMenu) !important;
-}
-
-.btn:hover{
-    background-color: var(--colorHeader) !important;
+ol,li{
+    font-family: var(--roboto);
 }
