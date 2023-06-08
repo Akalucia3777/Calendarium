@@ -15,6 +15,13 @@ def inicio(request):
     # Resto de la lógica de la vista protegida
     return HttpResponse(home.render())
 
+def ayuda(request):
+    helpa = loader.get_template('calendario/ayuda.html')
+    if not request.user.is_authenticated:
+        return HttpResponseRedirect(reverse('error404'))
+    # Resto de la lógica de la vista protegida
+    return HttpResponse(helpa.render())
+
 def vistamensual(request):
     mensual = loader.get_template('calendario/mensual.html')
     if not request.user.is_authenticated:
