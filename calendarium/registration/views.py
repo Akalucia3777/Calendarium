@@ -37,7 +37,6 @@ class RegistroView(CreateView):
     def get_success_url(self) -> str:
         return reverse_lazy('login')+'?registrado'
     
-    
     def get_form(self, form_class=None):
         
         form = super(RegistroView,self).get_form()

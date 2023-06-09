@@ -6,6 +6,19 @@
     <title>Vista mensual</title>
 {% endblock %}
 
+{% block links %}
+    <ul class="navbar-nav nav-tabs">
+        <li class="nav-item">
+            <a class="nav-link " href="{% url 'inicio' %}">Inicio</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link active" href="{% url 'vistamensual' %}">Mensual</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'vistatrackers' %}">Trackers</a>
+        </li>
+    </ul>
+{% endblock %}
 
 {% block contenido %}
   <!--Contenido-->

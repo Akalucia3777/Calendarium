@@ -34,17 +34,9 @@
             </button>
             <div class="collapse navbar-collapse justify-content-center justify-content-lg-end text-center"
                 id="navbarNav">
-                <ul class="navbar-nav nav-tabs">
-                    <li class="nav-item">
-                        <a class="nav-link active" href="{% url 'inicio' %}">Inicio</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'vistamensual' %}">Mensual</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'vistatrackers' %}">Trackers</a>
-                    </li>
-                </ul>
+                {% block links %}
+            
+                {% endblock %}
                 <div class="text-center text-lg-end ms-lg-auto">
                     <button type="submit" class="logout w-100" id="logoutButton">Log out</button>
                     <a href="{% url 'ayuda' %}" class="help-button">
