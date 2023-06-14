@@ -61,6 +61,4 @@ function deleteAllCookies() {
 var logoutButton = document.getElementById("logoutButton");
 logoutButton.addEventListener("click", function () {
   deleteAllCookies();
-  // Aquí puedes agregar cualquier otra lógica que desees ejecutar al hacer log out
-  alert("Cookies borradas. Sesión cerrada.");
 });

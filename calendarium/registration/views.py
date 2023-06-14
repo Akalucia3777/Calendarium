@@ -1,4 +1,3 @@
-from django.shortcuts import render,redirect
 from django.template import loader
 from .forms import UsuarioCrearFormConEmail
 from django.views.generic import CreateView
@@ -6,23 +5,10 @@ from django.http import HttpResponse
 from django.urls import reverse_lazy
 from django import forms
 from django.contrib.auth.views import LoginView
-from django.contrib.auth.views import LogoutView
-from django.contrib.auth import logout
 
 # Create your views here.
 def login(request):
     return LoginView.as_view(template_name='registration/login.html')(request)
-
-
-class CustomLogoutView(LogoutView):
-    def dispatch(self, request, args, **kwargs):
-        logout(request)
-        response = super().dispatch(request,args, **kwargs)
-        response.delete_cookie('sessionid')
-        return response
-
-def logout(request):
-    return redirect('registration/login.html')
 
 def vistasignup(request):
     home = loader.get_template('registration/SignUp.html')
@@ -36,6 +22,7 @@ class RegistroView(CreateView):
 
     def get_success_url(self) -> str:
         return reverse_lazy('login')+'?registrado'
+    
     
     def get_form(self, form_class=None):
         

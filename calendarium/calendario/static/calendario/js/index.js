@@ -13,13 +13,13 @@ function principal() {
 }
 
 function diaTabs(fecha, diaAct){
-    document.getElementById('diaT1').innerHTML = diaSemanaCorto[fecha.getDay()%7]+" "+diaAct +"/"+fecha.getMonth();
-    document.getElementById('diaT2').innerHTML = diaSemanaCorto[(fecha.getDay()+1)%7] +" "+(diaAct +1)+"/"+fecha.getMonth();
-    document.getElementById('diaT3').innerHTML = diaSemanaCorto[(fecha.getDay()+2)%7] +" "+(diaAct +2)+"/"+fecha.getMonth();
-    document.getElementById('diaT4').innerHTML = diaSemanaCorto[(fecha.getDay()+3)%7] +" "+(diaAct +3)+"/"+fecha.getMonth();
-    document.getElementById('diaT5').innerHTML = diaSemanaCorto[(fecha.getDay()+4)%7] +" "+(diaAct +4)+"/"+fecha.getMonth();
-    document.getElementById('diaT6').innerHTML = diaSemanaCorto[(fecha.getDay()+5)%7] +" "+(diaAct +5)+"/"+fecha.getMonth();
-    document.getElementById('diaT7').innerHTML = diaSemanaCorto[(fecha.getDay()+6)%7] +" "+(diaAct +6)+"/"+fecha.getMonth();
+    document.getElementById('diaT1').innerHTML = diaSemanaCorto[fecha.getDay()%7]+" "+diaAct +"/"+(fecha.getMonth()+1);
+    document.getElementById('diaT2').innerHTML = diaSemanaCorto[(fecha.getDay()+1)%7] +" "+(diaAct +1)+"/"+(fecha.getMonth()+1);
+    document.getElementById('diaT3').innerHTML = diaSemanaCorto[(fecha.getDay()+2)%7] +" "+(diaAct +2)+"/"+(fecha.getMonth()+1);
+    document.getElementById('diaT4').innerHTML = diaSemanaCorto[(fecha.getDay()+3)%7] +" "+(diaAct +3)+"/"+(fecha.getMonth()+1);
+    document.getElementById('diaT5').innerHTML = diaSemanaCorto[(fecha.getDay()+4)%7] +" "+(diaAct +4)+"/"+(fecha.getMonth()+1);
+    document.getElementById('diaT6').innerHTML = diaSemanaCorto[(fecha.getDay()+5)%7] +" "+(diaAct +5)+"/"+(fecha.getMonth()+1);
+    document.getElementById('diaT7').innerHTML = diaSemanaCorto[(fecha.getDay()+6)%7] +" "+(diaAct +6)+"/"+(fecha.getMonth()+1);
 }
 
 function diaCard(fecha, diaAct) {

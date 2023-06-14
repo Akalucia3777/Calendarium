@@ -35,10 +35,10 @@
             <div class="collapse navbar-collapse justify-content-center justify-content-lg-end text-center"
                 id="navbarNav">
                 {% block links %}
-            
+
                 {% endblock %}
                 <div class="text-center text-lg-end ms-lg-auto">
-                    <button type="submit" class="logout w-100" id="logoutButton">Log out</button>
+                    <a type="submit" class="logout w-100 btn" id="logoutButton" href="{% url 'logout' %}">Log out</a>
                     <a href="{% url 'ayuda' %}" class="help-button">
                         <i class="material-icons pt-1">help_outline</i>
                     </a>

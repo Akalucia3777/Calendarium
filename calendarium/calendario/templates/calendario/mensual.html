@@ -7,17 +7,17 @@
 {% endblock %}
 
 {% block links %}
-    <ul class="navbar-nav nav-tabs">
-        <li class="nav-item">
-            <a class="nav-link " href="{% url 'inicio' %}">Inicio</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link active" href="{% url 'vistamensual' %}">Mensual</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="{% url 'vistatrackers' %}">Trackers</a>
-        </li>
-    </ul>
+<ul class="navbar-nav nav-tabs">
+    <li class="nav-item">
+        <a class="nav-link" href="{% url 'inicio' %}">Inicio</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link active" href="{% url 'calendar_view' %}">Mensual</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="{% url 'vistatrackers' %}">Trackers</a>
+    </li>
+</ul>
 {% endblock %}
 
 {% block contenido %}
@@ -44,20 +44,47 @@
       </div>   
       <div class="row">
           <div class="col-lg-12">
-              <table>
-                  <thead>
-                      <tr>
-                          <th>Lun</th>
-                          <th>Mar</th>
-                          <th>Mié</th>
-                          <th>Jue</th>
-                          <th>Vie</th>
-                          <th>Sáb</th>
-                          <th>Dom</th>
-                      </tr>
-                  </thead>
-                  <tbody id="calendar-body"></tbody>
-              </table>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Lun</th>
+                        <th>Mar</th>
+                        <th>Mié</th>
+                        <th>Jue</th>
+                        <th>Vie</th>
+                        <th>Sáb</th>
+                        <th>Dom</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for week in calendar_matrix %}
+                        <tr>
+                            {% for day in week %}
+                                <td {% if day == diaActual %} class="diaActual"{% endif %}>
+                                    {% if day != 0 %}
+                                        <span class="day">{{ day }}</span>
+                                        {% for event in eventos %}
+                                            {% if event.date.day == day %}
+                                                <p>{{ event.title }}</p>
+                                            {% endif %}
+                                        {% endfor %}
+                                        {% for task in tareas %}
+                                            {% if task.exp_date.day == day %}
+                                                <p>{{ task.title }}</p>
+                                            {% endif %}
+                                        {% endfor %}
+                                        {% for birthday in cumpleanos %}
+                                            {% if birthday.date.day == day %}
+                                                <p>Cumpleaños de {{ birthday.name }}</p>
+                                            {% endif %}
+                                        {% endfor %}
+                                    {% endif %}
+                                </td>
+                            {% endfor %}
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>                  
           </div>
       </div>
     </div>
